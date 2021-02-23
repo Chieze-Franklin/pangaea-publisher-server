@@ -1,3 +1,4 @@
+const axios = require('axios');
 const models = require('./models');
 
 // handle create subsciption
@@ -35,9 +36,14 @@ exports.publishMessage = function (req, res) {
             });
         }
 
+        // POST to the subscribers
         docs.forEach(doc => {
             const { url } = doc;
-            // TODO: send POST to url with data
+            axios({
+                url,
+                method: 'post',
+                data
+            });
         });
 
         res.json({
