@@ -4,6 +4,7 @@ services:
   mongodb_container:
     image: mongo:latest
     environment:
+      MONGO_INITDB_DATABASE: app
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootpassword # to connect using mongo shell: mongo admin -u root -p rootpassword
     volumes:
