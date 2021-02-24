@@ -1,7 +1,12 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require("./routes");
+
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
 
 // Connect to Mongoose and set connection variable
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
