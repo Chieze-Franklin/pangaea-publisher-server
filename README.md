@@ -28,7 +28,7 @@ To test this locally:
 - Publish a message to the topic `topic`  
     ![test3](https://user-images.githubusercontent.com/6097630/108974768-0e260500-7686-11eb-9bbf-397714fa58cd.png)
 - Check the terminal running the subscriber server to see the same message printed out  
-    ![test4](https://user-images.githubusercontent.com/6097630/108974823-20a03e80-7686-11eb-9f63-e654510a64c9.png)
+    ![test5](https://user-images.githubusercontent.com/6097630/108978023-74605700-7689-11eb-8d74-c017a3ba2d31.png)
 
 To test this using the actual server, use [https://pangaea-publisher-server.herokuapp.com/](https://pangaea-publisher-server.herokuapp.com/)
 instead of [http://localhost:8000](http://localhost:8000), and register a subscriber that can be reached via the internet.
@@ -90,3 +90,12 @@ A failed request has `error` set to the reason for the failure.
     "error": "can not publish this message at this time"
 }
 ```
+
+### Payload sent to subscribers
+
+A `POST` request is sent to every subscriber for the specified topic.
+
+The body of the `POST` request contains the following fields:
+
+- `topic`: the specified topic.
+- `data`: the message published to the topic

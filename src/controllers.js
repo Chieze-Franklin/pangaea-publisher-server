@@ -42,7 +42,10 @@ exports.publishMessage = function (req, res) {
             axios({
                 url,
                 method: 'post',
-                data
+                data: {
+                    topic,
+                    data
+                }
             });
         });
 
