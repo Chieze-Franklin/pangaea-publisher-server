@@ -1,5 +1,12 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser = require('body-parser');
+
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
+
+const port = process.env.SUBSCRIBER_PORT || 9000;
 
 const app = express();
 
@@ -15,6 +22,6 @@ app.post('/endpoint', (req, res) => {
     res.send();
 });
 
-app.listen(9000, function () {
-    console.log(`🚀  Subscriber is running on port ${9000}`);
+app.listen(port, function () {
+    console.log(`🚀  Subscriber is running on port ${port}`);
 });
