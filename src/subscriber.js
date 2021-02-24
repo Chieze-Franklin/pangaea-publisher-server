@@ -1,10 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
 // configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true

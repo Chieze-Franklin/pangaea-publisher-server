@@ -39,11 +39,6 @@ exports.publishMessage = function (req, res) {
         // POST to the subscribers
         docs.forEach(doc => {
             const { url } = doc;
-            console.log({
-                url,
-                method: 'post',
-                data
-            })
             axios({
                 url,
                 method: 'post',
